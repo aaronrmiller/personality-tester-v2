@@ -12,7 +12,20 @@ module.exports = {
     }),
   ],
   devServer: {
+    proxy: {
+      '/testone': 'http://localhost:5000',
+    },
     contentBase: './dist',
     hot: true
   }
 }
+
+// devServer: {
+//   contentBase: '/',
+//   publicPath: '/',
+//   historyApiFallback: true,
+//   hot: true,
+//   proxy: {
+//     '/api': NODE_DEV_SERVER_URL,
+//   },
+// },
