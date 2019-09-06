@@ -4,6 +4,8 @@ import { Home } from './Home';
 import { About } from './About';
 import { Post } from './Post';
 
+import './../styles/style.sass'
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>

@@ -12,8 +12,12 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.(s*)css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.sass$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
+        ],
       },
     ],
   },
@@ -24,11 +28,11 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-    })
+    }),
   ],
   output: {
     path: path.resolve(__dirname, '../', 'dist'),
     publicPath: '/',
     filename: 'bundle.js',
-  }
+  },
 };
