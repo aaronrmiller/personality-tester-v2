@@ -6,7 +6,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import App from './components/App.tsx';
 
 const title = 'React with Test and Babel';
 

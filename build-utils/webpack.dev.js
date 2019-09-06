@@ -16,7 +16,8 @@ module.exports = {
       '/testone': 'http://localhost:5000',
     },
     contentBase: './dist',
-    hot: true
+    historyApiFallback: true,
+    hot: true,
   }
 }
 

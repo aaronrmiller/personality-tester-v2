@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "type-check": "tsc --noEmit",
     "start": "nodemon --exec babel-node server/index.js & webpack-dev-server --config build-utils/webpack.config.js --env.env=dev",
+    "lint": "tslint --project",
     "build": "webpack --config build-utils/webpack.config.js --env.env=prod",
     "build:analyze": "npm run build -- --env.addon=bundleanalyze --env.addon=bundlevisualizer"
   },
@@ -23,9 +25,14 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.3",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^4.3.5",
     "babel-loader": "^8.0.6",
     "dotenv-webpack": "^1.7.0",
     "eslint-loader": "^3.0.0",
@@ -34,6 +41,11 @@
     "react-hot-loader": "^4.12.12",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.6.2",
     "webpack": "^4.39.3",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.7",
@@ -48,6 +60,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.6.12",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1"
   }
 }

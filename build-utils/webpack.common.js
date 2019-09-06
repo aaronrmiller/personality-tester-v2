@@ -7,28 +7,28 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
         test: /\.(s*)css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
-    ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
-    }),
+      template: './src/index.html',
+    })
   ],
   output: {
     path: path.resolve(__dirname, '../', 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
-  },
-}
+    filename: 'bundle.js',
+  }
+};
