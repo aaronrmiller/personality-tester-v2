@@ -40,3 +40,16 @@
 **Extra**
   1. Wordpress
   2. Github pages
+
+
+**Instructions**
+  1. Parallax Banner
+  2. Personality Images
+  3. Fetch data
+  4. 
+  <!-- 3. Responsive Design? -->
+
+**Test**
+  1. React Spring
+  2. Load Data
+  3.  
