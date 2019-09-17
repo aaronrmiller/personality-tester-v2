@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { history } from 'react-router-dom'; 
+import { Questions } from './Questions';
+import ChartResults from './ChartResults';
 
 
 // TODO: Needs three components:
@@ -15,7 +17,8 @@ export const Test: React.FC<props> = ({ history }) => {
     return (
       <>
       <h1>Test</h1>
-
+      <Questions />
+      <ChartResults />
       <button onClick={() => {
         history.push('/Results');
       }}>Results</button>
