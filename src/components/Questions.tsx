@@ -5,7 +5,6 @@ import { stateContext } from '../hooks/context';
 // 1. change handler
 // 2. if time, increment question
 // 3. add interface for reducers and union types
-//https://www.carlrippon.com/managing-state-in-functional-react-components-with-usereducer/
 // 4. add sass partial, nested, style one component
 
 interface IProps {}
@@ -26,17 +25,78 @@ export const Questions: React.FC<IProps> = () => {
   return (
     <>
       <form
-        onSubmit={e => {
+        onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
           dispatch({
-            type: 'answer',
+            type: 'ANSWER',
             payload: { trait: questionPos % 5, newScore: radioOption },
           })
         }}
       >
         <h2>Question {questionPos + 1}: </h2>
         <p>{questions[questionPos]}</p>
-        {/* {answers.map((item, index, array) => (
+        <label htmlFor="">
+          Strongly Disagree
+          <input
+            type="radio"
+            name="radioOption"
+            value={1}
+            checked={radioOption === 1}
+            className="radio-button-1"
+            onChange={(e: React.FormEvent<HTMLFormElement>) => dispatch({type: 'CHANGE_HANDLER', payload: e.target.value})}
+          />
+        </label>
+        <label htmlFor="">
+          Disagree
+          <input 
+          type="radio"
+          name="radioOption"
+          value={2}
+          checked={radioOption === 2}
+          className="radio-button-1"
+          onChange={(e: React.FormEvent<HTMLFormElement>) => dispatch({type: 'CHANGE_HANDLER', payload: e.target.value})}
+          />
+        </label>
+        <label htmlFor="">
+          Neutral
+          <input 
+          type="radio"
+          name="radioOption"
+          value={3}
+          checked={radioOption === 3}
+          className="radio-button-1"
+          onChange={(e: React.FormEvent<HTMLFormElement>) => dispatch({type: 'CHANGE_HANDLER', payload: e.target.value})}
+          />
+        </label>
+        <label htmlFor="">
+          Agree
+          <input 
+          type="radio"
+          name="radioOption"
+          value={4}
+          checked={radioOption === 4}
+          className="radio-button-1"
+          onChange={(e: React.FormEvent<HTMLFormElement>) => dispatch({type: 'CHANGE_HANDLER', payload: e.target.value})}
+          />
+        </label>
+        <label htmlFor="">
+          Strongly Agree
+          <input 
+          type="radio"
+          name="radioOption"
+          value={5}
+          checked={radioOption === 5}
+          className="radio-button-1"
+          onChange={(e: React.FormEvent<HTMLFormElement>) => dispatch({type: 'CHANGE_HANDLER', payload: e.target.value})}
+          />
+        </label>
+        <button>Submit</button>
+      </form>
+    </>
+  );
+};
+
+        /* {answers.map((item, index, array) => (
           <div key={index}>
           <label htmlFor={`radioOption`}>
             {item}
@@ -52,68 +112,7 @@ export const Questions: React.FC<IProps> = () => {
             />
           </label>
           </div>
-        ))} */}
-        <label htmlFor="">
-          Strongly Disagree
-          <input
-            type="radio"
-            name="radioOption"
-            value={1}
-            checked={radioOption === 1}
-            className="radio-button-1"
-            onChange={(e) => dispatch({type: 'changeHandle', payload: e.target.value})}
-          />
-        </label>
-        <label htmlFor="">
-          Disagree
-          <input 
-          type="radio"
-          name="radioOption"
-          value={2}
-          checked={radioOption === 2}
-          className="radio-button-1"
-          onChange={(e) => dispatch({type: 'changeHandle', payload: e.target.value})}
-          />
-        </label>
-        <label htmlFor="">
-          Neutral
-          <input 
-          type="radio"
-          name="radioOption"
-          value={3}
-          checked={radioOption === 3}
-          className="radio-button-1"
-          onChange={(e) => dispatch({type: 'changeHandle', payload: e.target.value})}
-          />
-        </label>
-        <label htmlFor="">
-          Agree
-          <input 
-          type="radio"
-          name="radioOption"
-          value={4}
-          checked={radioOption === 4}
-          className="radio-button-1"
-          onChange={(e) => dispatch({type: 'changeHandle', payload: e.target.value})}
-          />
-        </label>
-        <label htmlFor="">
-          Strongly Agree
-          <input 
-          type="radio"
-          name="radioOption"
-          value={5}
-          checked={radioOption === 5}
-          className="radio-button-1"
-          onChange={(e) => dispatch({type: 'changeHandle', payload: e.target.value})}
-          />
-        </label>
-        <button>Submit</button>
-      </form>
-    </>
-  );
-};
-
+        ))} */
 // "I am the life of the party.", E
 // "I feel little concern for others.", A
 // "I am always prepared.", C

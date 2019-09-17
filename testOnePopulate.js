@@ -20,17 +20,6 @@ const norms = {
   EmotionalStabilityNorm: 6.57,
 };
 
-// const testOneNorms = new Schema({
-//   testOneNorms: {
-//     OpennessNorm: Number,
-//     ConscientiousnessNorm: Number,
-//     ExtraversionNorm: Number,
-//     AgreeablenessNorm: Number,
-//     EmotionalStabilityNorm: Number,
-//   },
-// });
-
-// const testOneNorm = model('TestOneNorms', testOneNorms);
 
 const testOneNormData = new TestOneNorms({
   testOneNorms: {
@@ -41,23 +30,8 @@ const testOneNormData = new TestOneNorms({
     EmotionalStabilityNorm: norms.EmotionalStabilityNorm,
   },
 });
-// console.log('testing data', testOneNormData);
 
 testOneNormData.save((err, testOneNormRes) => {
   if (err) console.log(err);
   console.log(`test one Norms ${testOneNormRes}.`);
 });
-
-// module.export = testOneNorm;
-
-// const csv = require('csv-parser');
-// const fs = require('fs');
-
-// fs.createReadStream('data.csv')
-//   .pipe(csv())
-//   .on('data', (row) => {
- 
-//   })
-//   .on('end', () => {
-//     console.log('CSV file completed.');
-//   });
