@@ -5,16 +5,6 @@ import { animationDuration, animationConfig } from './animationConfig';
 import * as d3 from 'd3';
 import Arc from './Arc';
 
-// const animationDuration = 200;
-// const animationConfig = {
-//   to: async (next, cancel) => {
-//     await next({ t: 1});
-//   },
-//   from: { t: 0 },
-//   config: { duration: animationDuration },
-//   reset: true,
-// }
-
 
 // creates a set of colors based on the chosen set
 const colorScheme = d3.schemeSet2;
